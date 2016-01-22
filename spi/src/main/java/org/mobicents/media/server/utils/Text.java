@@ -35,6 +35,7 @@ import java.util.Collection;
  *
  * @author kulikov
  */
+@Deprecated
 public class Text implements CharSequence {
     //reference on the local buffer
     protected byte[] chars;

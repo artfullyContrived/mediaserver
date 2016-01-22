@@ -24,7 +24,7 @@ package org.mobicents.media.server.spi.format.audio;
 
 import org.mobicents.media.server.spi.format.AudioFormat;
 import org.mobicents.media.server.spi.format.EncodingName;
-import org.mobicents.media.server.utils.Text;
+
 
 /**
  * RFC2833 DTMF format descriptor.
@@ -39,6 +39,6 @@ public class DTMFFormat extends AudioFormat {
     public DTMFFormat() {
         super(new EncodingName("telephone-event"));
         setSampleRate(8000);
-        setOptions(new Text("0-15"));
+        setOptions(new String("0-15"));
     }
 }

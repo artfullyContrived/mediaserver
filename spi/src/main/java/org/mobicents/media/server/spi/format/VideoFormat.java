@@ -90,7 +90,7 @@ public class VideoFormat extends Format implements Cloneable {
 
     @Override
     public VideoFormat clone() {
-        return new VideoFormat(getName().clone(), frameRate);
+        return new VideoFormat(getName(), frameRate);
     }
 
     @Override

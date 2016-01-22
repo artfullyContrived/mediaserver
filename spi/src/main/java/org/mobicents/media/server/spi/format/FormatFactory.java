@@ -23,7 +23,7 @@
 package org.mobicents.media.server.spi.format;
 
 import org.mobicents.media.server.spi.format.audio.DTMFFormat;
-import org.mobicents.media.server.utils.Text;
+
 
 /**
  * Constructs format descriptor object.
@@ -31,7 +31,7 @@ import org.mobicents.media.server.utils.Text;
  * @author kulikov
  */
 public class FormatFactory {
-    private static Text DTMF = new Text("telephone-event");
+    private static CharSequence DTMF = new String("telephone-event");
 
     /**
      * Creates new audio format descriptor.

@@ -23,7 +23,7 @@
 package org.mobicents.media.server.spi;
 
 import java.io.IOException;
-
+import org.mobicents.media.server.utils.Text;
 
 /**
  *
@@ -155,7 +155,7 @@ public interface Connection {
 	 *            the SDP descriptor of the other party.
 	 * @throws IOException
 	 */
-	public void setOtherParty(CharSequence descriptor) throws IOException;
+	public void setOtherParty(Text descriptor) throws IOException;
 
 	/**
 	 * Adds connection state listener.

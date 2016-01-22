@@ -22,56 +22,34 @@
 
 package org.mobicents.media.server.spi.format;
 
+import org.mobicents.media.server.utils.Text;
+
 /**
  * Format encoding name.
  * 
  * @author kulikov
- * @author Anthony Musyoki
  */
-public class EncodingName {
+public class EncodingName extends Text implements Cloneable {
+    public EncodingName() {
+        super();
+    }
 
-	private final String name;
+    public EncodingName(Text text) {
+    	byte[] newArray=new byte[text.length()];
+    	this.strain(newArray,0, this.length());
+    	text.duplicate(this);
+    }
 
-	public EncodingName(CharSequence text) {
-		this.name = text.toString();
-	}
-
-	public EncodingName(String s) {
-		this.name = s;
-	}
-
-	public CharSequence getName() {
-		return name;
-	}
-	
-	
-	@Override
-	public String toString() {
-		return name.trim();
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		EncodingName other = (EncodingName) obj;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equalsIgnoreCase(other.name))
-			return false;
-		return true;
-	}
+    public EncodingName(String s) {
+        super(s);
+    }
+    
+    @Override
+    protected EncodingName clone() {
+    	byte[] newArray=new byte[this.length()];
+        Text t = new Text();
+        t.strain(newArray,0, this.length());
+        this.duplicate(t);
+        return new EncodingName(t);
+    }
 }

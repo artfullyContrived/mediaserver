@@ -22,7 +22,7 @@
 
 package org.mobicents.media.server.spi.format;
 
-
+import org.mobicents.media.server.utils.Text;
 
 /**
  * Media format descriptor.
@@ -34,7 +34,7 @@ public class Format implements Cloneable {
     private EncodingName name;
 
     //any specific options
-    private CharSequence options;
+    private Text options;
 
     private Boolean sendPTime=false;
     
@@ -71,7 +71,7 @@ public class Format implements Cloneable {
      *
      * @return options as text.
      */
-    public CharSequence getOptions() {
+    public Text getOptions() {
         return options;
     }
 
@@ -80,7 +80,7 @@ public class Format implements Cloneable {
      *
      * @param options new options.
      */
-    public void setOptions(CharSequence options) {
+    public void setOptions(Text options) {
         this.options = options;
     }
 
@@ -96,7 +96,6 @@ public class Format implements Cloneable {
      * @return
      */
     public boolean matches(Format fmt) {
-    	System.out.println("this name "+ this.name + " tsht name " + fmt.name);
         return this.name.equals(fmt.name);
     }
 

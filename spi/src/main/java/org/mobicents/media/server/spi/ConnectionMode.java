@@ -22,7 +22,7 @@
 
 package org.mobicents.media.server.spi;
 
-
+import org.mobicents.media.server.utils.Text;
 
 
 
@@ -41,27 +41,27 @@ package org.mobicents.media.server.spi;
  */
 public enum ConnectionMode {	
     
-		INACTIVE(new String("inactive")), 
-        SEND_ONLY(new String("sendonly")),
-        RECV_ONLY(new String("recvonly")),
-        SEND_RECV(new String("sendrecv")),
-        CONFERENCE(new String("confrnce")),
-        NETWORK_LOOPBACK(new String("netwloop")),
-        LOOPBACK(new String("loopback")),
-        CONTINUITY_TEST(new String("conttest")),
-        NETWORK_CONTINUITY_TEST(new String("netwtest"));
+		INACTIVE(new Text("inactive")), 
+        SEND_ONLY(new Text("sendonly")),
+        RECV_ONLY(new Text("recvonly")),
+        SEND_RECV(new Text("sendrecv")),
+        CONFERENCE(new Text("confrnce")),
+        NETWORK_LOOPBACK(new Text("netwloop")),
+        LOOPBACK(new Text("loopback")),
+        CONTINUITY_TEST(new Text("conttest")),
+        NETWORK_CONTINUITY_TEST(new Text("netwtest"));
 		
-		private CharSequence description;
+		private Text description;
 		
-		private ConnectionMode(CharSequence value) {
+		private ConnectionMode(Text value) {
 			this.description = value;
 		}
 		
-		public CharSequence getDescription() {
+		public Text getDescription() {
 			return description;
 		}
 
-        public static ConnectionMode valueOf(CharSequence v) {
+        public static ConnectionMode valueOf(Text v) {
             if (v.equals(inactive)) {
                 return INACTIVE;
             } else if (v.equals(send_only)) {
@@ -85,14 +85,14 @@ public enum ConnectionMode {
             return null;
         }
         
-    private final static CharSequence inactive = new String("inactive");
-    private final static CharSequence send_only = new String("sendonly");
-    private final static CharSequence recv_only = new String("recvonly");
-    private final static CharSequence send_recv= new String("sendrecv");
-    private final static CharSequence network_loopback = new String("netwloop");
-    private final static CharSequence loopback = new String("loopback");
-    private final static CharSequence conference  = new String("confrnce");
-    private final static CharSequence continuity_test  = new String("conttest");
-    private final static CharSequence network_continuity_test  = new String("netwtest");
+    private final static Text inactive = new Text("inactive");
+    private final static Text send_only = new Text("sendonly");
+    private final static Text recv_only = new Text("recvonly");
+    private final static Text send_recv= new Text("sendrecv");
+    private final static Text network_loopback = new Text("netwloop");
+    private final static Text loopback = new Text("loopback");
+    private final static Text conference  = new Text("confrnce");
+    private final static Text continuity_test  = new Text("conttest");
+    private final static Text network_continuity_test  = new Text("netwtest");
         
 }

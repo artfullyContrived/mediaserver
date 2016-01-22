@@ -117,7 +117,7 @@ public class AudioFormat extends Format implements Cloneable {
 
     @Override
     public AudioFormat clone() {
-        AudioFormat f = new AudioFormat(getName(), sampleRate, sampleSize, channels);
+        AudioFormat f = new AudioFormat(getName().clone(), sampleRate, sampleSize, channels);
         f.setOptions(this.getOptions());
         return f;
     }

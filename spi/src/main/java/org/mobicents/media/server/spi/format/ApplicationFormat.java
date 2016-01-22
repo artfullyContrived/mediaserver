@@ -18,7 +18,7 @@ public class ApplicationFormat extends Format implements Cloneable {
 
 	@Override
 	public ApplicationFormat clone() {
-		return new ApplicationFormat(getName());
+		return new ApplicationFormat(getName().clone());
 	}
 
 	@Override

@@ -113,7 +113,7 @@ public class DtlsFormat extends Format implements Cloneable {
 
     @Override
     public DtlsFormat clone() {
-        DtlsFormat f = new DtlsFormat(getName(), sampleRate, sampleSize, channels);
+        DtlsFormat f = new DtlsFormat(getName().clone(), sampleRate, sampleSize, channels);
         f.setOptions(this.getOptions());
         return f;
     }
